@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
+import Hero3D from "@/components/Hero3D";
+import ClientStrip from "@/components/ClientStrip";
 import Showreel from "@/components/Showreel";
 import Work from "@/components/Work";
 import Services from "@/components/Services";
@@ -13,9 +13,10 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main>
+      <div className="grain" aria-hidden="true" />
       <Navbar />
-      <Hero />
-      <Marquee />
+      <Hero3D />
+      <ClientStrip />
       <Showreel />
       <Work />
       <Services />

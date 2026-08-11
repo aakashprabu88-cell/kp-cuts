@@ -33,7 +33,7 @@ export default function Showreel() {
               <Play className="ml-1 h-8 w-8 fill-accent text-accent" />
             </div>
             <p className="mt-4 font-mono text-sm text-fog group-hover:text-mist">
-              press play — 60s of cuts
+              press play — cinematic edits &amp; film work
             </p>
             <p className="mt-1 text-xs text-fog/60">
               Drop your showreel YouTube ID here to embed the real reel

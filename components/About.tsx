@@ -1,32 +1,27 @@
 import SectionHeading from "./SectionHeading";
 
-const tools = [
-  "DaVinci Resolve",
-  "After Effects",
-  "Photoshop",
-  "CapCut",
-  "Audacity",
-  "Motion Graphics",
-];
+const tools = ["CapCut", "DaVinci Resolve", "CapCut PC", "Photoshop"];
 
 const facts = [
-  "Self-taught editor, obsessed with pacing",
-  "Built my own flash-transition pack",
-  "Work with creators, brands and podcasts",
-  "Fast turnarounds, clear communication",
+  "Self-taught editor, obsessed with pacing and hooks",
+  "Built a signature flash-transition style",
+  "Cut for a daily-vlog Instagram influencer",
+  "Edited the short film 'Mundhinam Paartheney'",
+  "Worked directly with Gokul Srinivasan",
+  "Runs my own page of cinematic edits",
 ];
 
 export default function About() {
   return (
-    <section id="about" className="border-y border-line bg-panel">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2">
+    <section id="about" className="mx-auto max-w-6xl px-6 py-28">
+      <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
             eyebrow="about"
-            title="Behind the cuts"
-            sub="kp__cuts started with a phone, a free editor and a refusal to make boring content. Now it's a full freelance editing service."
+            title="The editor behind the cuts"
+            sub="It started with an Instagram page of cinematic edits, turned into daily vlogs for an influencer, then into a short film — and one of India's biggest creators."
           />
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-9 space-y-4">
             {facts.map((f) => (
               <li key={f} className="flex items-start gap-3 text-sm text-fog">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -36,7 +31,7 @@ export default function About() {
           </ul>
         </div>
 
-        <div>
+        <div className="rounded-3xl border border-line bg-panel p-8">
           <h3 className="font-mono text-sm text-accent">// toolbox</h3>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (
@@ -49,15 +44,15 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-2xl border border-accent/30 bg-ink p-6">
+          <div className="mt-9 rounded-2xl border border-accent/30 bg-ink p-6">
             <p className="font-mono text-sm text-accent">signature</p>
             <h4 className="mt-2 text-lg font-semibold text-white">
               The kp__cuts flash pack
             </h4>
-            <p className="mt-2 text-sm text-fog">
-              A set of custom white-flash transition overlays I built in DaVinci
-              Resolve — the finishing touch that makes cuts hit harder. Ask me
-              to use them on your project.
+            <p className="mt-2 text-sm leading-relaxed text-fog">
+              A custom set of white-flash transition overlays I built — the
+              finishing touch that makes cuts hit harder. Your project can have
+              them too.
             </p>
           </div>
         </div>

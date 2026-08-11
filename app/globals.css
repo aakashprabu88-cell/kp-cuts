@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #08080a;
-  --color-panel: #0f0f12;
-  --color-raised: #17171c;
-  --color-line: #26262e;
-  --color-accent: #ff4d00;
-  --color-accent-soft: #ff7a3d;
+  --color-ink: #050507;
+  --color-panel: #0b0b0e;
+  --color-raised: #141419;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-accent: #ff5c1f;
+  --color-accent-soft: #ff8a50;
+  --color-gold: #f5c26b;
   --color-teal: #2dd4bf;
-  --color-fog: #a1a1aa;
-  --color-mist: #d4d4d8;
+  --color-fog: #9a9aa3;
+  --color-mist: #ececef;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono-fallback), ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
@@ -23,11 +24,52 @@ body {
   color: var(--color-mist);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: var(--color-accent);
   color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a31;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #fff 10%, var(--color-accent-soft) 50%, var(--color-gold) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.glow-line {
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
 @keyframes marquee {
@@ -40,7 +82,7 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 @keyframes pulse-dot {
@@ -48,10 +90,20 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.35;
+    opacity: 0.3;
   }
 }
 
 .animate-pulse-dot {
   animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
 }
